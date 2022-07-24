@@ -1,14 +1,19 @@
 let today = new Date();
-let point1 = new Date('06/19/2022');
+let point1 = new Date('07/24/2022');
 let convrt = 3600 * 24 * 1000;
 let odd = Math.floor((today.getTime() - point1.getTime()) / convrt);
 let id0 = document.getElementById("#0")
 let id1 = document.getElementById("#1")
 let id2 = document.getElementById("#2")
-let kaizen1 = Math.pow(1.0125, odd).toFixed(2);
-let kaizen = Math.pow(1.05, odd);
-let CFproblem = `Do ${(kaizen).toFixed(2)} CF problems ${(1000 * kaizen1)} rating`
-let run = `Run ${(kaizen1)} Km`
+let id3 = document.getElementById("#3")
+let id4 = document.getElementById("#4")
+const kaizen = (pre, days, incr, fixNum) => (pre * Math.pow(1 + incr, days)).toFixed(fixNum)
+let mediate = `Ngồi thiền sáng, tối ${kaizen(5, odd, 0.01, 0)} phút.`
+let code = `Tập trung học code ${Math.floor((kaizen(120, odd, 0.01, 0)) / 60)} tiếng ${(kaizen(120, odd, 0.01, 0)) % 60} phút.`
+let CF = `Code ${kaizen(1, odd, 0.02, 2)} bài rating ${kaizen(1500, odd, 0.005, 0)}`
+let run = `Chạy bộ ${kaizen(1, odd, 0.01, 2)} Km`
 id0.innerText = `You last ${odd} days, today you do: `
-id1.innerText = CFproblem
-id2.innerText = run
+id1.innerText = code
+id2.innerText = mediate
+id3.innerText = CF
+id4.innerText = run 
