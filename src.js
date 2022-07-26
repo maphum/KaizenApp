@@ -8,7 +8,7 @@ let id2 = document.getElementById("#2")
 let id3 = document.getElementById("#3")
 let id4 = document.getElementById("#4")
 const kaizen = (pre, days, incr, fixNum) => (pre * Math.pow(1 + incr, days)).toFixed(fixNum)
-let mediate = `Ngồi thiền sáng, tối ${kaizen(5, odd, 0.01, 0)} phút.`
+let mediate = `Ngồi thiền sáng, tối ${kaizen(5, odd, 0.01, 0)} phút ${kaizen(60 * 5, odd, 0.01 , 0) % 60} giây`
 let code = `Tập trung học code ${Math.floor((kaizen(120, odd, 0.01, 0)) / 60)} tiếng ${(kaizen(120, odd, 0.01, 0)) % 60} phút.`
 let CF = `Code ${kaizen(1, odd, 0.02, 2)} bài rating ${kaizen(1500, odd, 0.005, 0)}`
 let run = `Chạy bộ ${kaizen(1, odd, 0.01, 2)} Km`
